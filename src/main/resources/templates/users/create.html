@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create Player</title>
+</head>
+<body>
+<h1>Create Player</h1>
+<form th:action="@{/users}" th:object="${user}" method="post">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" th:field="*{username}" />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" th:field="*{email}" />
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" />
+  </div>
+  <div>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" th:field="*{surname}" />
+  </div>
+  <div>
+    <label for="info">Info:</label>
+    <input type="text" id="info" th:field="*{info}" />
+  </div>
+  <div>
+    <label for="phoneNumber">Phone-number:</label>
+    <input type="text" id="phoneNumber" th:field="*{phoneNumber}" />
+  </div>
+
+  <button type="submit">Create</button>
+</form>
+<a th:href="@{/users}">Back to Users List</a>
+</body>
+</html>

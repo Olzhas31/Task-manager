@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import lombok.Data;
@@ -36,9 +37,6 @@ public class UserDetail {
   @Column(name = "phone_number")
   private String phoneNumber;
 
-  @Column
-  private String urlPicture;
-
   @Column(name = "register_at", nullable = false)
   private LocalDateTime registerAt;
 
@@ -46,5 +44,9 @@ public class UserDetail {
   @JoinColumn(name = "user_id", referencedColumnName = "id")
   private User user;
 
+  @PrePersist
+  protected void onCreate() {
+    this.registerAt = LocalDateTime.now();
+  }
 
 }

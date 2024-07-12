@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User</title>
+</head>
+<body>
+<h1>User</h1>
+<p>ID: <span th:text="${user.id}">ID</span></p>
+<p>Username: <span th:text="${user.username}">Username</span></p>
+<p>Email: <span th:text="${user.email}">Email</span></p>
+<p>Name: <span th:text="${user.name}">Name</span></p>
+<p>Surname: <span th:text="${user.surname}">Surname</span></p>
+<p>Info: <span th:text="${user.info}">Info</span></p>
+<p>Phone-number: <span th:text="${user.phoneNumber}">Phone-number</span></p>
+<p>registerAt: <span th:text="${user.registerAt}">registerAt</span></p>
+<a th:href="@{/users}">Back to Users List</a>
+</body>
+</html>

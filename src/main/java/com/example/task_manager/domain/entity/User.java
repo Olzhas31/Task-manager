@@ -67,4 +67,12 @@ public class User implements UserDetails {
   public boolean isEnabled() {
     return enabled;
   }
+
+  public void setUserDetail(UserDetail userDetail) {
+    this.userDetail = userDetail;
+    if (userDetail != null) {
+      userDetail.setUser(this);
+    }
+  }
+
 }
