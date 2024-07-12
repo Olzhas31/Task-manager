@@ -19,5 +19,6 @@ CREATE TABLE IF NOT EXISTS task_manager.user_details (
     info TEXT,
     phone_number VARCHAR(11),
     register_at TIMESTAMP NOT NULL,
-    user_id INTEGER UNIQUE REFERENCES task_manager.users(id)
+    user_id INTEGER UNIQUE,
+    FOREIGN KEY (user_id) REFERENCES task_manager.users(id)
 );
